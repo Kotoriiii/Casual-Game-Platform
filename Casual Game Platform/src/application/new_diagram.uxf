@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<diagram program="umlet" version="15.0.0">
+  <zoom_level>10</zoom_level>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>60</x>
+      <y>50</y>
+      <w>370</w>
+      <h>550</h>
+    </coordinates>
+    <panel_attributes>GoldMiner::GameUI
+--
++root: Pane
+-picture: String
++refresh: Refresh
+-player: Player
++animation: Timeline
+-canvas = new Canvas(1280, 946): Canvas
+-gc = canvas.getGraphicsContext2D(): GraphicsContext
+-scoreLabel: Label
+-goalLabel: Label
+-timeLabel: Label
+-levelLabel: Label
++goalPoint: int
++point = 0: int
+-mc = new MineCreator(): MineCreator
++captureStatus: int
++nextGoalScoreRate: int
++time: int
+-second = 1: int
++gamelevel: int
+--
++GameUI(String picture): ctor
++start(): void
++nextLevel(): void
++setScorelabel(): void
++setLevelLabel(): void
++setTime(): void
++setBG(): void
++setPlayer(): void
++update(): void
++timeUpdate(): void
+--
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+</diagram>
