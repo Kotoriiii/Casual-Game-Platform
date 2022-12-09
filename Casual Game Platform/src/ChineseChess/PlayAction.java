@@ -44,9 +44,15 @@ class PlayAction implements EventHandler<MouseEvent> {
 		}
 		// Second Click
 		if (isFirstClick == false) {
+			int[] pos = new int[] {i, j};
+			if (isSameSide(pos)) {
+				initPos = pos;
+				isFirstClick = false;
+				return;
+			}
 			targetPos = new int[] { i, j };
 			if (!isSameSide(targetPos)) {
-				System.out.println(isValidMove(initPos, targetPos));
+//				System.out.println(isValidMove(initPos, targetPos));
 				if (isValidMove(initPos, targetPos)) {
 					boolean isGameOver = isGameOver(targetPos);
 					isFirstClick = true;
@@ -58,9 +64,6 @@ class PlayAction implements EventHandler<MouseEvent> {
 					ChessPanel.swapTurn();
 				}
 			}
-//			System.out.println("SecondClick");
-//			System.out.println("i" + i + "j" + j + "chessType" + ChessPanel.panel[i][j]);
-
 			return;
 		}
 
